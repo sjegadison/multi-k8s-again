@@ -1,0 +1,3 @@
+service-account.json
+*.v1
+/node_modules
