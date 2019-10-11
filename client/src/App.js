@@ -12,15 +12,18 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Fib Calculator Version KUBERNETES AGAIN</h1>
+            <h1 className="App-title">Fib Calculator Version KUBERNETES</h1>
             <Link to="/">Home</Link>
             <Link to="/otherpage">Other Page</Link>
           </header>
           <div>
+          <Switch>
             <Route exact path="/" component={Fib} />
             <Route path="/otherpage" component={OtherPage} />
-            <Route path="*" component={Fib} />
+            <Route component={Fib} />
+            </Switch>
           </div>
+         
         </div>
       </Router>
     );
