@@ -14,6 +14,7 @@ before_install:
   - gcloud config set project kubernetes-sj
   - gcloud config set compute/zone asia-south1-a
   - gcloud container clusters get-credentials cluster-k8s
+  - gcloud auth configure-docker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t sjegadison/react-test -f ./client/Dockerfile.dev ./client
 
