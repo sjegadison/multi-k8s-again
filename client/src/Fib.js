@@ -14,12 +14,12 @@ class Fib extends Component {
   }
 
   async fetchValues() {
-    const values = await axios.get('/api/values/current');
+    const values = await axios.get('/api/be/values/current');
     this.setState({ values: values.data });
   }
 
   async fetchIndexes() {
-    const seenIndexes = await axios.get('/api/values/all');
+    const seenIndexes = await axios.get('/api/be/values/all');
     this.setState({
       seenIndexes: seenIndexes.data
     });
@@ -28,7 +28,7 @@ class Fib extends Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    await axios.post('/api/values', {
+    await axios.post('/api/be/values', {
       index: this.state.index
     });
     this.setState({ index: '' });
