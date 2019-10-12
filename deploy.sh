@@ -10,7 +10,7 @@ docker push gcr.io/kubernetes-sj/multi-client:$SHA
 docker push gcr.io/kubernetes-sj/multi-server:$SHA
 docker push gcr.io/kubernetes-sj/multi-worker:$SHA
 
-# kubectl apply -f k8s
-# kubectl set image deployments/server-deployment server=sjegadison/multi-server:$SHA
-# kubectl set image deployments/client-deployment client=sjegadison/multi-client:$SHA
-# kubectl set image deployments/worker-deployment worker=sjegadison/multi-worker:$SHA
+kubectl apply -f k8s
+kubectl set image deployments/server-deployment server=gcr.io/kubernetes-sj/multi-server:$SHA
+kubectl set image deployments/client-deployment client=gcr.io/kubernetes-sj/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=gcr.io/kubernetes-sj/multi-worker:$SHA
